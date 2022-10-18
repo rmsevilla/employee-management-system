@@ -53,9 +53,11 @@ public class EmployeeServiceImpl implements EmployeeService {
             update.setEmpStreet(employee.getEmpStreet());
             update.setEmpCity(employee.getEmpCity());
 
-            empRepo.save(update);
+            return empRepo.save(update);
+
+        } else {
+            throw new Exception();
         }
-        throw new Exception();
     }
 
     @Override

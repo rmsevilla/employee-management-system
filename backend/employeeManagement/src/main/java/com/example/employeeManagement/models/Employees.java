@@ -22,6 +22,22 @@ public class Employees {
 
     private String empCity;
 
+    public Employees() {
+        super();
+    }
+
+    public Employees(int empId, String empFirstName, String empLastName, String empJobTitle,
+                     String empPhone, String empEmail, String empStreet, String empCity) {
+        super();
+        this.empId = empId;
+        this.empFirstName = empFirstName;
+        this.empLastName = empLastName;
+        this.empJobTitle = empJobTitle;
+        this.empPhone = empPhone;
+        this.empEmail = empEmail;
+        this.empStreet = empStreet;
+    }
+
     public int getEmpId() {
         return empId;
     }
