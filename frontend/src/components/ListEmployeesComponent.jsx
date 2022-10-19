@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeService';
+import AddEmployeeComponent from './AddEmployeeComponent';
 
 
 class ListEmployeesComponent extends Component {
@@ -19,6 +20,12 @@ class ListEmployeesComponent extends Component {
     render() { 
         return ( 
             <div>
+
+                <br></br>
+
+                <h3>Employee List</h3>
+
+                <AddEmployeeComponent/>
 
                 <br></br>
 
