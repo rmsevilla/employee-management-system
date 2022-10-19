@@ -24,7 +24,7 @@ class ListEmployeesComponent extends Component {
 
                 <table className="table table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr className="table-secondary">
                             <th className="text-center">Employee ID</th>
                             <th className="text-center">First Name</th>
                             <th className="text-center">Last Name</th>
