@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 99%;
+  height: 50px;
+  background-color: lightgray;
+  text-align: center;
+  color: black;
+}
+
+.navbar {
+  background-color: lightgray;
+}

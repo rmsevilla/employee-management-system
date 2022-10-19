@@ -19,7 +19,6 @@ class ListEmployeesComponent extends Component {
     render() { 
         return ( 
             <div>
-                <h3 className="text-center">Employee List</h3>
 
                 <br></br>
 
