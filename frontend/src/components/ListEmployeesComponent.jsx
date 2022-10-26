@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import employeeService from '../services/employeeService';
 import AddEmployeeComponent from './AddEmployeeComponent';
+import UpdateEmployeeComponent from './UpdateEmployeeComponent';
 
 
 class ListEmployeesComponent extends Component {
@@ -10,11 +11,18 @@ class ListEmployeesComponent extends Component {
         this.state = { 
                 employees: []
          }
+         this.deleteEmployee = this.deleteEmployee.bind(this);
     }
 
     componentDidMount() {
         employeeService.getAllEmployees().then((res) => {
             this.setState({employees: res.data});
+        });
+    }
+
+    deleteEmployee(id){
+        employeeService.delete(id).then((res) => {
+            this.setState({employees: this.state.employees.filter(employee => employee.empId !== id)});
         });
     }
     render() { 
@@ -40,7 +48,7 @@ class ListEmployeesComponent extends Component {
                             <th className="text-center">Email</th>
                             <th className="text-center">Street</th>
                             <th className="text-center">City</th>
-                            <th className="text-center">Actions</th>
+                            <th className="text-center"></th>
                         </tr>
                     </thead>
 
@@ -57,6 +65,16 @@ class ListEmployeesComponent extends Component {
                                     <td className="text-center">{employee.empEmail}</td>
                                     <td className="text-center">{employee.empStreet}</td>
                                     <td className="text-center">{employee.empCity}</td>
+                                    <td>
+                                        <div className="row g-0">
+                                            <div className="col col-sm-6 px-0">
+                                                <UpdateEmployeeComponent/>
+                                            </div>
+                                            <div className="col col-sm-6 px-0">
+                                                <button className="btn btn-danger rounded-pill" onClick = {() => this.deleteEmployee(employee.empId)}>Delete</button>
+                                            </div>
+                                        </div>    
+                                    </td>
                                 </tr>
                             )
                         }
