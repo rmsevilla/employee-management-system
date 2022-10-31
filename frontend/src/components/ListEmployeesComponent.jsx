@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import employeeService from '../services/employeeService';
 import AddEmployeeComponent from './AddEmployeeComponent';
 import UpdateEmployeeComponent from './UpdateEmployeeComponent';
@@ -68,7 +69,7 @@ class ListEmployeesComponent extends Component {
                                     <td>
                                         <div className="row g-0">
                                             <div className="col col-sm-6 px-0">
-                                                <UpdateEmployeeComponent/>
+                                                <Link to={`/${employee.empId}`} style={{color: "black"}}><UpdateEmployeeComponent/></Link>
                                             </div>
                                             <div className="col col-sm-6 px-0">
                                                 <button className="btn btn-danger rounded-pill" onClick = {() => this.deleteEmployee(employee.empId)}>Delete</button>

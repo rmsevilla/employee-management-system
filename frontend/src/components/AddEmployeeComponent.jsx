@@ -83,8 +83,8 @@ class AddEmployeeComponent extends Component {
         return ( 
             <div>
                 <div className="row">
-                    <div className="col-md-12 text-end pe-4">
-                        <button type="button" className="btn btn-success btn-sm rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+                    <div className="col-md-12 text-end" style={{paddingRight: `76px`}}>
+                        <button type="button" className="btn btn-success rounded-pill" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
                     </div>
                 </div>
 
@@ -145,3 +145,4 @@ class AddEmployeeComponent extends Component {
 }
  
 export default AddEmployeeComponent;
+
