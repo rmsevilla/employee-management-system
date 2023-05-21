@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/api/employees")
-@CrossOrigin
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 public class EmployeeController {
 
     @Autowired
@@ -23,6 +23,7 @@ public class EmployeeController {
         return new ResponseEntity<List<Employees>>(empService.getAllEmployees(), HttpStatus.OK);
     }
 
+    @CrossOrigin
     @GetMapping("/getEmployeeById/{empId}")
     public ResponseEntity<?> getEmployeeById(@PathVariable("empId") int empId) throws Exception{
         try {

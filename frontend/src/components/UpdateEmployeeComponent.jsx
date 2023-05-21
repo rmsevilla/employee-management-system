@@ -14,6 +14,7 @@ const UpdateEmployeeComponent = () => {
     const [empCity, setEmpCity] = useState('');
 
     const {id} = useParams();
+    console.log('Employee ID: ', id);
 
     const navigate = useNavigate();
 
@@ -36,19 +37,18 @@ const UpdateEmployeeComponent = () => {
 
     useEffect(() => {
         employeeService.getEmployeeById(id).then((response) => {
-
-            setEmpId(response.data.empId)
-            setEmpFirstName(response.data.empFirstName)
-            setEmpLastName(response.data.empLastName)
-            setEmpJobTitle(response.data.empJobTitle)
-            setEmpPhone(response.data.empPhone)
-            setEmpEmail(response.data.empEmail)
-            setEmpStreet(response.data.empStreet)
-            setEmpCity(response.data.empCity)
+            setEmpId(response.data.empId);
+            setEmpFirstName(response.data.empFirstName);
+            setEmpLastName(response.data.empLastName);
+            setEmpJobTitle(response.data.empJobTitle);
+            setEmpPhone(response.data.empPhone);
+            setEmpEmail(response.data.empEmail);
+            setEmpStreet(response.data.empStreet);
+            setEmpCity(response.data.empCity);
         }).catch(error => {
-            console.log(error)
+            console.log(error);
         })
-    }, [])
+    }, [id])
 
 return (
     <div>
@@ -87,7 +87,7 @@ return (
                         </div>
                         <div class="mb-3">
                             <label for="empEmail" class="form-label">Email</label>
-                            <input type="email" class="form-control" valuee={empEmail} onChange={(e) => setEmpEmail(e.target.value)}></input>
+                            <input type="email" class="form-control" value={empEmail} onChange={(e) => setEmpEmail(e.target.value)}></input>
                         </div>
                         <div class="mb-3">
                             <label for="empStreet" class="form-label">Street</label>

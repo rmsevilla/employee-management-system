@@ -8,7 +8,6 @@ class HeaderComponent extends Component {
         this.state = { 
          };
     }
-    
 
     render() { 
         return ( 
